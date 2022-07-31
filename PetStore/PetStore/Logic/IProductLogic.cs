@@ -1,4 +1,4 @@
-﻿using PetStore.Models;
+﻿using PetStore.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,21 +21,9 @@ namespace PetStore.Logic
         public List<Product> GetAllProducts();
 
         /// <summary>
-        /// Gets a product by the name of the product
+        /// Gets a product by the id of the product
         /// </summary>
-        /// <param name="name">The name given to the product.  It can include spaces</param>
-        public T GetProductByName<T>(string name) where T : Product;
-
-        /// <summary>
-        /// Get all in stock products
-        /// </summary>
-        /// <returns>The names of the in stock products</returns>
-        public List<string> GetOnlyInStockProducts();
-
-        /// <summary>
-        /// Returns the sum of the prices for all in stock products
-        /// </summary>
-        /// <returns>Dollar amount</returns>
-        public decimal GetTotalPriceOfInventory();
+        /// <param name="productId">The id given to the product.</param>
+        public Product GetProductById(int productId);
     }
 }

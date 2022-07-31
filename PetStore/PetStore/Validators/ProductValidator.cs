@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using PetStore.Models;
+using PetStore.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace PetStore.Validators
 {
-    internal class DogLeashValidator : AbstractValidator<DogLeash>
+    internal class ProductValidator : AbstractValidator<Product>
     {
-        public DogLeashValidator()
+        public ProductValidator()
         {
             RuleFor(x => x.Name).NotEmpty();
             RuleFor(x => x.Description).MinimumLength(10).When(x => !string.IsNullOrEmpty(x.Description));
